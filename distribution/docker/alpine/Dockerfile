@@ -1,4 +1,4 @@
-FROM docker.io/alpine:3.23 AS builder
+FROM docker.io/alpine:3.23@sha256:865b95f46d98cf867a156fe4a135ad3fe50d2056aa3f25ed31662dff6da4eb62 AS builder
 
 WORKDIR /vector
 
@@ -12,7 +12,7 @@ RUN ARCH=$(if [ "$TARGETPLATFORM" = "linux/arm/v6" ]; then echo "arm"; else cat 
 
 RUN mkdir -p /var/lib/vector
 
-FROM docker.io/alpine:3.23
+FROM docker.io/alpine:3.23@sha256:865b95f46d98cf867a156fe4a135ad3fe50d2056aa3f25ed31662dff6da4eb62
 
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md
 LABEL org.opencontainers.image.url="https://vector.dev"
