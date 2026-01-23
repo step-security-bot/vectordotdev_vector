@@ -1,7 +1,7 @@
 #
 # VECTOR BUILDER
 #
-FROM docker.io/timberio/vector-dev:latest AS builder
+FROM docker.io/timberio/vector-dev:latest@sha256:ff742b79631620237ee75dac0829267a15ca3b426b781a09b7ab646e62a6a374 AS builder
 WORKDIR /vector
 COPY . .
 RUN --mount=type=cache,target=/usr/local/cargo/registry \

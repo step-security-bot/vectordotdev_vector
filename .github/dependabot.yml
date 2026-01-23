@@ -175,3 +175,53 @@ updates:
       npm_and_yarn:
         patterns:
           - "*"
+
+  - package-ecosystem: docker
+    directory: /regression
+    schedule:
+      interval: daily
+
+  - package-ecosystem: bundler
+    directory: /scripts
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /scripts/cross
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /scripts/environment
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /tests/e2e
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /tests/e2e/datadog-metrics/dogstatsd_client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: pip
+    directory: /tests/e2e/datadog-metrics/dogstatsd_client
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /tests/integration/dnstap/data
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /tilt
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /website
+    schedule:
+      interval: daily
